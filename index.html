@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nash Zheng">
+    <title>Lydia Lei</title>
+    <link rel="icon" href="img/ICP-logo-mark.png">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- 禁止 ctrl + c =================================================================== -->
+    <script>
+        document.oncopy = function(event) {
+            if(window.event) {
+                event = window.event;
+            }try {
+                var the = event.srcElement;
+                if(!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")) {
+                    return false;
+            }
+            return true;
+            }catch(e) {
+                return false;
+            }
+        }
+    </script>
+
+    <!-- 禁止 ctrl + x ===================================================================== -->
+    <script>
+        document.oncut = function(event) {
+            if(window.event) { 
+                event = window.event;
+            }try {
+                var the = event.srcElement;
+                if(!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")) {
+                    return false;
+            }
+            return true; 
+            }catch(e) { 
+                return false; 
+            }
+        }
+    </script>
+
+    <!-- 禁止右键 ========================================================================= -->
+    <script>
+        function stop() {
+            return false;
+        }
+        document.oncontextmenu = stop;
+    </script>
+
+    <!-- 屏蔽选中 ======================================================================== -->
+    <script>
+        document.onselectstart = function(event) {
+            if (window.event) {
+                event = window.event;
+            }try {
+                var the = event.srcElement;
+                if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")) {
+                    return false;
+                }
+                return true;
+            }catch(e) {
+                return false;
+            }
+        }
+    </script>
+
+</head>
+<body style="overflow: Scroll; overflow-x: hidden;">
+    <header id="home">
+        <div class="hero">
+            <div class="overlay"></div>
+            <h1 class="T1">Welcome to Lydia Lei's website!</h1>
+
+            <img class="motoko" width="277px" src="img/icon-motoko.png">
+
+        </div>
+    </header>
+
+    <div class="stick_wrapper">
+        <nav>
+            <ul class="container">
+                <li class="btn"><a href="#">Home</a></li>
+                <li class="btn"><a href="#item1">Experience</a></li>
+                <li class="btn"><a href="#item2">About</a></li>
+                <li class="btn"><a href="#item3">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section id="item1">
+        <h2 class="font-light">
+            <span>Lydia</span><span></span>
+        </h2>
+        <nav class="toc">
+            <ul>
+                <li><a href="#intro">Intro</a></li>
+                <li>
+                    <a href="#dev">Developer Mode</a>
+                    <ul>
+                        <li><a href="#dev-edit-html">Edit HTML</a></li>
+                        <li><a href="#dev-element-classes">Element Classes</a></li>
+                        <li><a href="#dev-slide-classes">Slide Classes</a></li>
+                        <li><a href="#dev-export-html">Export HTML</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#css">CSS Editor</a>
+              <ul>
+                <li><a href="#css-fonts">Custom Fonts</a></li>
+                <li><a href="#css-developer-mode">Developer Mode</a></li>
+                <li><a href="#css-examples">Examples</a></li>
+              </ul>
+                </li>
+            </ul>
+          <svg class="toc-marker" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#ccc" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+          </svg>
+        </nav>
+        
+        <!-- day and night btn -->
+        <div class="btn-day-night-wrapper">
+            <div class="toggle">
+                <input class="toggle-input" type="checkbox" id="toggle-box-checkbox"/>
+                <div class="toggle-bg"></div>
+                <div class="toggle-switch">
+                    <div class="toggle-switch-figure"></div>
+                    <div class="toggle-switch-figureAlt"></div>
+            </div>  
+            </div>
+        </div>
+
+        <article class="contents article-contents">
+          <section id="intro">
+            <h2>Progress Nav</h2>
+            <p>
+              This page demonstrates an idea for how progress can be visualized inside of a standard page nav. Scroll the page and note how the marker animates to highlight all of the sections that are currently on screen.
+            </p>
+            <p>
+              The rest of the content below is taken from <a href="https://slides.com/developers" target="_top">slides.com/developers</a>. Take a look at that to see how the progress nav looks on a real page.
+            </p>
+            <p>
+              Created by Hakim El Hattab | <a href="http://hakim.se" target="_top">hakim.se</a> | <a href="https://twitter.com/hakimel" target="_top">@hakimel</a> 
+            </p>
+                <h2>Slides for Developers</h2>
+                <p>
+                    We strive to make Slides a great and flexible tool for developers. Presentations created on Slides are HTML documents under the hood, so generally anything that HTML can do, Slides can do. We make it easy to access and edit the underlying HTML and CSS through the <a href="#dev">Developer Mode</a>.
+                </p>
+                <p>
+                    There's also an API for creating new presentations with preset content and we're aiming to add additional APIs in the future.
+                </p>
+            </section>
+        
+            <section>
+                <div id="dev">
+                    <h2>Developer Mode</h2>
+                    <p>
+                        The Slides editor has a developer mode which is useful if you know a bit of HTML and CSS. With this mode active you will be able to modify the underlying HTML of your deck, allowing you to make adjustments that the Slides editor does not provide interface options for.
+                    </p>
+                    <p>
+                        To enable the developer mode open the editor settings in the bottom left corner:
+                    </p>
+              <img class="developer-image" src="https://static.slid.es.s3.amazonaws.com/site/developers/slides-developer-mode-1.png">
+            </div>
+        
+                <div id="dev-edit-html">
+                    <h3>Editing HTML</h3>
+                    <p>
+                        The per-slide HTML editor can be accessed from the slide options area. It gives you raw access to the current slide's HTML, allowing you to change anything you like. Note that some elements, such as &lt;script&gt; and &lt;link&gt;, are not allowed for security reasons.﻿
+                    </p>
+                </div>
+        
+                <div id="dev-element-classes">
+                    <h3>Element Classes <a href="/pricing" class="header-secondary-text">(Requires Pro)</a></h3>
+                    <p>
+                        As a paying Slides customer you have access to the <a href="#css">CSS editor</a> which allows you to add custom styles to your deck. By turning on the developer mode a new "class name" field will appear for any block that you focus. This allows you to easily target a specific element with your CSS.
+                    </p>
+                    <p>
+                        Here's an example that defines an "upside-down" class using custom CSS and applies it to a text block.
+                    </p>
+                    <pre class="code-block" data-highlight-theme="github-gist">
+                        <code class="hljs css">.upside-down {transform: scale( 1, -1 );}</code>
+                    </pre>
+                </div>
+        
+            <div id="dev-slide-classes">
+                <h3>Slide Classes <a href="/pricing" class="header-secondary-text">(Requires Pro)</a></h3>
+                <p>
+                    Just like you can add custom classes to individual elements it's also possible to add custom classes at the slide level. This can used to apply broader changes to the whole slide like inverting text and icon colors or changing the slide transition.
+                </p>
+                <img class="developer-image" src="https://static.slid.es.s3.amazonaws.com/site/developers/slides-developer-mode-4.png">
+                <p>
+                    Under the hood the slide background element is separate from the slide itself. Here are two examples showing how you'd target the slide contents or slide background using a custom class called "night-sky":
+                </p>
+    
+                <pre class="code-block" data-highlight-theme="github-gist"><code class="hljs css">// Targets the slide contents
+                .slides .night-sky svg path {
+                    fill: yellow;
+                }
+                // Target the slide background
+                .backgrounds .night-sky {
+                    background: linear-gradient(0deg, #141528, #0b1bb2);
+                }</code></pre>
+    
+                <img class="developer-image" src="https://static.slid.es.s3.amazonaws.com/site/developers/slides-developer-mode-5.png">
+            </div>
+    
+            <div id="dev-export-html">
+                <h3>Export HTML</h3>
+                <p>
+                    You can access the complete HTML for all slides in your deck inside of the export panel, under "Export to reveal.js"﻿. This provides a way of exporting your deck markup and the core Slides styles to reveal.js. There are a few limitations with exporting this way but it should provide a good starting point.
+                </p>
+    
+                <img class="developer-image" src="https://static.slid.es.s3.amazonaws.com/site/developers/slides-developer-mode-6.png">
+            </div>
+        
+            </section>
+        
+            <section>
+            <div id="css">
+              <h2>CSS Editor <a href="/pricing" class="header-secondary-text">(Requires Pro)</a></h2>
+              <p>
+                The CSS editor lets you author custom styles for your presentation with a real-time preview of the result. It's available as an option inside of the Style panel of the presentation editor.
+              </p>
+              <p>
+                The editor preprocesses styles using <a href="http://lesscss.org/">LESS</a>, though you're free to write plain CSS as well. We apply the styles in real-time as you type so there's no need to leave the editor or even press a refresh button to see what you're getting. Note that when your styles are saved they will be automatically wrapped in a ".reveal {}" selector to avoid conflicts with other page styles.
+              </p>
+            </div>
+            <div id="css-fonts">
+              <h3>Custom Fonts</h3>
+              <p>
+                You can load custom fonts from Typekit and Google fonts and apply them using custom CSS. <a href="http://help.slides.com/knowledgebase/articles/1077976-custom-fonts-pro">Find out more</a>.
+              </p>
+            </div>
+            <div id="css-developer-mode">
+              <h3>Developer Mode</h3>
+              <p>
+                If you turn on the <a href="#dev">developer mode</a> you can also add custom classes to any focused element. This is a convenient way to easily apply your CSS to specific elements.
+              </p>
+            </div>
+          
+            <div id="css-examples">
+                <h3>Examples</h3>
+                <pre class="code-block" data-highlight-theme="github-gist"><code class="hljs css">// Change presentation background
+        &amp; {
+            background: #a83239;
+        }
+        
+        // Change color of body text
+        .slides {
+            color: #009999;
+        }
+        
+        // Turn text white if the slide has a dark background
+        .has-dark-background {
+            color: #fff;
+        }
+        
+        // Add a blue border to all slides (each slide is a &lt;section&gt;)
+        .slides section {
+            outline: 1px solid blue;
+        }
+        
+        // Add a red border to all vertical stacks of slides
+        .slides section.stack {
+            outline: 1px solid red;
+        }<br>
+        // Include a custom font<br>@font-face {<br>&nbsp; font-family: "Cabin Sketch";<br>&nbsp; src: url("https://s3.amazonaws.com/static.slid.es/fonts/cabinsketch/cabinsketch-regular.woff") format("woff"),<br>&nbsp; &nbsp; &nbsp; &nbsp;url("https://s3.amazonaws.com/static.slid.es/fonts/cabinsketch/cabinsketch-regular.ttf") format("truetype");<br>}
+        <br>.slides h1, .slides h2, .slides h3 {<br>&nbsp; &nbsp; font-family: "Cabin Sketch";<br>}
+        
+        
+        // Change color of controls and progress bar
+        @interactiveColor: rgb(200,105,119);
+        
+        .progress span {
+            background: @interactiveColor !important;
+        }
+        
+        .controls .navigate-left {
+            border-right-color: @interactiveColor !important;
+        }
+        .controls .navigate-right {
+            border-left-color: @interactiveColor !important;
+        }
+        .controls .navigate-up {
+            border-bottom-color: @interactiveColor !important;
+        }
+        .controls .navigate-down {
+            border-top-color: @interactiveColor !important;
+        }</code></pre>
+          </div>
+        
+            <p>Here's where you can access the CSS editor from inside of the Style panel:</p>
+            <img class="developer-image" src="https://static.slid.es.s3.amazonaws.com/site/developers/slides-css-editor-1.png">
+        
+            <p>A screenshot of the editor:</p>
+            <img class="developer-image" src="https://static.slid.es.s3.amazonaws.com/site/developers/slides-css-editor-2.png">
+        
+            </section>
+        </article>
+    </section>
+
+    <section id="item2">
+        <div class="glass">
+            <h1 class="T1">About</h1>
+        </div>
+        
+        <div id="jeangrey">
+            <div class="container-about">
+                <div class="fire">
+                    <div class="flame"></div>
+                    <div class="flame"></div>
+                    <div class="flame"></div>
+                    <div class="flame"></div>
+                    <div class="flame"></div>
+                    <div class="flame"></div>
+                    <div class="flame"></div>
+                    <div class="flame"></div>
+                    <div class="flame"></div>
+                    <div class="flame"></div>	
+                </div>
+                <div class="hair"></div>
+                <div class="face">
+                    <div class="eyes"></div>
+                    <div class="nose"></div>
+                    <div class="mouth"></div>
+                </div>
+                <div class="hair-front"></div>
+                <div class="neck"></div>
+                <div class="body">
+                    <div class="emblem">&nbsp;&nbsp;&nbsp;∞</div>
+                </div>
+        
+                <div class="telepathy one"></div>
+                <div class="telepathy two"></div>
+                <div class="telepathy three"></div>
+                
+            </div><!--end .container-->
+        </div><!--end .stripe#jeangrey-->
+
+    </section>
+
+    <section id="item3">
+        <div id="aaa">
+            <div class="center">
+                <h1 class="T1">Contact</h1>
+            </div>
+
+            <div class="wrapper-icons">
+                <div class="icons">
+                    <a href="#">
+                        <div class="layer">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span class="fab fa-facebook-f"></span>
+                        </div>
+                        <span class="text">Facebook</span>
+                    </a>
+                    <a href="#">
+                        <div class="layer">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span class="fab fa-twitter"></span>
+                        </div>
+                        <span class="text">Twitter</span>
+                    </a>
+                    <a href="#">
+                        <div class="layer">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span class="fab fa-instagram"></span>
+                        </div>
+                        <span class="text">Instagram</span>
+                    </a>
+                    <a href="#">
+                        <div class="layer">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span class="fab fa-brands fa-medium"></span>
+                        </div>
+                        <span class="text">Medium</span>
+                    </a>
+                    <a href="#">
+                        <div class="layer">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span class="fab fa-brands fa-discord"></span>
+                        </div>
+                        <span class="text">Discord</span>
+                    </a>
+                    <a href="#">
+                        <div class="layer">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span class="fab fa-brands fa-telegram"></span>
+                        </div>
+                        <span class="text">Telegram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <canvas id="canvas" width="100%" height="100%"></canvas>
+    </section>
+
+    <script src="js/jq-v3.6.0.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- 返回顶部的小火箭 -->
+    <a href="" class="rocket-button" onclick="pageScroll()">
+        <div class="default">To top!</div>
+        <div class="success">
+            <svg>
+                <use xlink:href="#check">
+            </svg>
+            <div>Top!</div>
+        </div>
+        <div class="animation">
+            <div class="rocket">
+                <svg>
+                    <use xlink:href="#rocket">
+                </svg>
+            </div>
+            <div class="smoke">
+                <i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+        </div>
+    </a>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 36" id="rocket">
+            <path d="M12,0 C18.6666667,8.70175439 19.7777778,19.0350877 15.3333333,31 L8.66666667,31 C4.22222222,19.0350877 5.33333333,8.70175439 12,0 Z" fill="var(--rocket)"></path>
+            <path d="M12,0 C5.33333333,8.70175439 4.22222222,19.0350877 8.66666667,31 C6.72222222,17.9473684 7.83333333,7.61403509 12,0 Z" fill="var(--rocket-shadow-left)"></path>
+            <path d="M12,0 C18.6666667,8.70175439 19.7777778,19.0350877 15.3333333,31 C17.2777778,17.9473684 16.1666667,7.61403509 12,0 Z" fill="var(--rocket-shadow-right)"></path>
+            <path d="M22.2399372,27.25 C21.2403105,25.558628 19.4303122,23.808628 16.21,22 L15,31 L17.6512944,31 C18.2564684,31 18.8216022,31.042427 19.1572924,31.5292747 L21.7379379,35.271956 C22.0515593,35.7267976 22.5795404,36 23.1449294,36 C23.5649145,36 23.9142153,35.7073938 23.9866527,35.3215275 L24,35.146217 L23.9987214,35.1196135 C23.7534506,31.4421183 23.1671892,28.8189138 22.2399372,27.25 Z" fill="var(--rocket-wing-right)"></path>
+            <path d="M1.76006278,27.25 C2.75968951,25.558628 4.56968777,23.808628 7.79,22 L9,31 L6.34870559,31 C5.74353157,31 5.17839777,31.042427 4.84270762,31.5292747 L2.2620621,35.271956 C1.94844071,35.7267976 1.42045963,36 0.855070627,36 C0.435085457,36 0.0857846604,35.7073938 0.0133472633,35.3215275 L0,35.146217 L0.00127855763,35.1196135 C0.24654935,31.4421183 0.832810758,28.8189138 1.76006278,27.25 Z" fill="var(--rocket-wing-left)"></path>
+            <circle fill="var(--rocket-window-shadow)" cx="12" cy="12" r="3"></circle>
+            <circle fill="var(--rocket-window)" cx="12" cy="12" r="2.5"></circle> -->
+            <path d="M15.6021597,5.99977504 L8.39784027,5.99977504 C8.54788101,5.6643422 8.70496315,5.3309773 8.86908669,4.99968036 L15.1309133,4.99968036 C15.2950369,5.3309773 15.452119,5.6643422 15.6021597,5.99977504 Z" fill-opacity="0.3" fill="var(--rocket-line)"></path>
+        </symbol>
+    </svg>
+    <script>
+    !function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{("undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:this).charming=e()}}(function(){return function(){return function e(n,r,t){function o(f,u){if(!r[f]){if(!n[f]){var a="function"==typeof require&&require;if(!u&&a)return a(f,!0);if(i)return i(f,!0);var l=new Error("Cannot find module '"+f+"'");throw l.code="MODULE_NOT_FOUND",l}var d=r[f]={exports:{}};n[f][0].call(d.exports,function(e){return o(n[f][1][e]||e)},d,d.exports,e,n,r,t)}return r[f].exports}for(var i="function"==typeof require&&require,f=0;f<t.length;f++)o(t[f]);return o}}()({1:[function(e,n,r){n.exports=function(e,n){n=n||{},e.normalize();var r=n.splitRegex,t=n.tagName||"span",o=null!=n.classPrefix?n.classPrefix:"char",i=1;function f(e){for(var n=e.parentNode,f=e.nodeValue,u=r?f.split(r):f,a=u.length,l=-1;++l<a;){var d=document.createElement(t);o&&(d.className=o+i,i++),d.appendChild(document.createTextNode(u[l])),d.setAttribute("aria-hidden","true"),n.insertBefore(d,e)}""!==f.trim()&&n.setAttribute("aria-label",f),n.removeChild(e)}!function e(n){if(3===n.nodeType)return f(n);var r=Array.prototype.slice.call(n.childNodes),t=r.length;if(1===t&&3===r[0].nodeType)return f(r[0]);for(var o=-1;++o<t;)e(r[o])}(e)}},{}]},{},[1])(1)});
+    </script>
+    <script type="text/javascript">
+        
+        const d = 40;
+        document.querySelectorAll('.rocket-button').forEach(elem => {
+            elem.querySelectorAll('.default, .success > div').forEach(text => {
+                charming(text);
+                text.querySelectorAll('span').forEach((span, i) => {
+                    span.innerHTML = span.textContent == ' ' ? '&nbsp;' : span.textContent;
+                    span.style.setProperty('--d', i * d + 'ms');
+                    span.style.setProperty('--ds', text.querySelectorAll('span').length * d - d - i * d + 'ms');
+                });
+            });
+
+            elem.addEventListener('click', e => {
+                e.preventDefault();
+                if (elem.classList.contains('animated')) {
+                    return;
+                }
+                elem.classList.add('animated');
+                elem.classList.toggle('live');
+                setTimeout(() => {
+                   elem.classList.remove('animated');
+                }, 2000);
+            });
+        });
+        
+        function pageScroll() {
+            //把内容滚动指定的像素数（第一个参数是向右滚动的像素数，第二个参数是向下滚动的像素数）
+            window.scrollBy(0, -37);
+            //延时递归调用，模拟滚动向上效果
+            scrolldelay = setTimeout('pageScroll()', 37);
+            //获取scrollTop值，声明了DTD的标准网页取document.documentElement.scrollTop，否则取document.body.scrollTop；因为二者只有一个会生效，另一个就恒为0，所以取和值可以得到网页的真正的scrollTop值
+            var sTop = document.documentElement.scrollTop + document.body.scrollTop;
+            //判断当页面到达顶部，取消延时代码（否则页面滚动到顶部会无法再向下正常浏览页面）
+            if (sTop == 0) clearTimeout(scrolldelay);
+        }
+        
+    </script>
+    <!-- 返回顶部的小火箭 -->
+
+</body>
+</html>
