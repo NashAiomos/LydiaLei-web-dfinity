@@ -51,17 +51,6 @@ article{
     margin-bottom: 77px;
 }
 
-.T1{
-    margin: 0;
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center !important;
-    letter-spacing: 2px;
-    font-size: 55px;
-    font-weight: 400;
-    text-transform: uppercase;
-}
-
 header{
     height: calc(100% - 65px);
     -webkit-appearance: 1500px;
@@ -75,20 +64,21 @@ header{
     background-size: cover;
     height: 100%;
     width: 100%;
+	
     transform-origin: 50% 100%;
     transform-style: preserve-3d;
 }
 
-.hero .overlay{
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+
+.T1{
+    margin: 0;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center !important;
+    letter-spacing: 2px;
+    font-size: 55px;
+    font-weight: 400;
+    text-transform: uppercase;
 }
 
 nav{
@@ -138,7 +128,7 @@ section{
 
 section#item1{
     background: #000a1d;
-    font-family: sana-serif;
+    /* font-family: sana-serif; */
 }
 
 section#item2{
@@ -174,7 +164,7 @@ section#item3{
 
 /* Lydia Lei 首页发光字 */
 .font-light{
-    color: #222;
+    color: #414855;
     font-size: 4em;
     font-weight: 500;
     letter-spacing: 5px;
@@ -766,6 +756,7 @@ section#item3{
 	height: 370%;
 	z-index: -1;
 }
+
 .toc-marker path {
 	transition: all 0.3s ease;
 }
@@ -774,22 +765,25 @@ section#item3{
   	padding: 0 1.3em 1.3em 1.3em;
   	max-width: 970px;
 	font-size: 1.3em;
-	font-family: "Frank Ruhl Libre", sans-serif;
     margin: 0 auto;
 }
+
 .contents img {
 	max-width: 100%;
 }
+
 .contents .code-block {
 	white-space: pre;
 	overflow: auto;
 	max-width: 100%;
 }
+
 .contents .code-block code {
 	display: block;
 	background-color: #fff;
 	padding: 10px;
 }
+
 .contents .code-inline {
 	background-color: #fff;
 	padding: 4px;
@@ -1574,7 +1568,7 @@ section#item3{
 .width100 {
 	width: 100% !important;
 }
-  
+
 .swiper-pagination {
 	position: absolute;
 	left: 50%;
@@ -1584,7 +1578,7 @@ section#item3{
 	width: auto !important;
 	box-sizing: border-box;
 }
-  
+
 .swiper-pagination-bullet {
 	border-radius: 0;
 	width: 8px;
@@ -1593,21 +1587,21 @@ section#item3{
 	line-height: 30px;
 	font-size: 12px;
 	opacity: 1;
-	background: rgba(255, 185, 0, 0.3);
+	background: rgba(77, 241, 12, 0.37);
 	display: inline-block;
 	margin-right: 8px;
 	cursor: pointer;
 	transition: all 0.2s;
 	box-sizing: border-box;
 }
-  
+
 .swiper-pagination-bullet-active {
-	background: #FFB200;
+	background: #a3e704;
 	width: 20px;
 	border-radius: 10px;
 	box-sizing: border-box;
 }
-  
+
 .slider-buttons {
 	position: absolute;
 	display: flex;
@@ -1617,7 +1611,7 @@ section#item3{
 	padding-top: 8px;
 	box-sizing: border-box;
 }
-  
+
 .swiper-button-next,
 .swiper-button-prev {
 	background-color: transparent;
@@ -1655,17 +1649,17 @@ section#item3{
 	color: hsl(65, 80%, 60%);
 	text-decoration: none;
 }
-  
-a:hover,
-a:focus {
+
+.contents a:hover,
+.contents a:focus {
 	text-decoration: underline;
 }
-  
+
 .page-title {
 	text-align: center;
 	font-size: 21px;
 }
-  
+
 .page-title::after {
 	content: '↓';
 	display: block;
@@ -1701,3 +1695,71 @@ a:focus {
 	}
 }
 
+
+/* 首页打字欢迎 */
+
+.typing.animate {
+	width: 21ch;
+	border-right: 0.1em solid rgb(241, 237, 237);
+	font-family: monospace;
+	font-size: 2em;
+	animation: type 2.5s steps(20), writer 1s infinite alternate, delete 0.5s steps(5) 2.5s, type2 1s steps(4) 3s forwards, type3 3s steps(22, end) 6s forwards;
+	overflow: hidden;
+	white-space: nowrap;
+	cursor: pointer;
+	margin: 0 auto;
+	position: relative;
+	top: 37%;
+}
+
+.typing.animate::before {
+	content: "Hello, Web3.0 Lydia Lei!";
+	animation: type2 1s steps(4) 3s forwards, type3 3s steps(22, end) 6s forwards;
+}
+
+@keyframes type {
+	from {
+		width: 0;
+	}
+	to {
+		width: 21ch;
+	}
+}
+
+@keyframes type2 {
+	from {
+		width: 16ch;
+
+		content: "Hello, Web3.0 Friend!"
+	}
+	to {
+		width: 20ch;
+		content: "Hello, Web3.0 Friend!"
+	}
+}
+
+@keyframes type3 {
+	from {
+		width: 18ch;
+		content: "Hello, Web3.0 Friend! This is Lydia Lei space!"
+	}
+	to {
+		width: 37.5ch;
+		content: "Hello, Web3.0 Friend! This is Lydia Lei space!"
+	}
+}
+
+@keyframes writer {
+	50% {
+		border-color: transparent;
+	}
+}
+
+@keyframes delete {
+from {
+		width: 21ch;
+	}
+	to {
+		width: 12ch;
+	}
+}

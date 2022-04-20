@@ -10915,3 +10915,12 @@ $('#toggle-box-checkbox').on('change', function(){
 });
 
 
+// 首页打字效果
+$(document).ready(() => {
+	let typingElement = $('.typing');
+	typingElement.on('click', (e) => {
+		typingElement.removeClass('animate');
+		setTimeout(() => typingElement.addClass('animate'), 1);
+	})
+});
+
