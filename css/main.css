@@ -7,6 +7,20 @@ html,body{
     min-height: 100%;
 }
 
+#runaway-btn {
+	position: absolute;
+	z-index: 207;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 4rem;
+	width: 10rem;
+	font-size: 1.5rem;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 1px 1px 5px rgb(140, 139, 139);
+}
+
 article{
 	background-image: linear-gradient(to bottom, #000a1d 30%, #24206C, #88D9FF, #FFF 80%);
 	background-size: 100% 500%;
@@ -32,7 +46,7 @@ article{
 
 .center{
     margin: 0 auto;
-    width: 17%;
+    width: 22%;
     margin-top: 177px;
     margin-bottom: 77px;
 }
@@ -86,6 +100,7 @@ nav.fixed{
     top: 0;
     left: 0;
     right: 0;
+	z-index: 3;
 }
 
 .stick-wrapper{
@@ -96,7 +111,6 @@ nav .container{
     list-style: none;
     padding: 0;
     margin: 0 auto;
-    text-align: center;
     padding-bottom: 30px;
 }
 
@@ -135,7 +149,7 @@ section#item2{
 }
 
 .glass{
-    padding-top: 90px;
+    padding-top: 135px;
     margin: 0 auto;
     width: 207px;
 }
@@ -149,12 +163,12 @@ section#item3{
 .motoko{
     animation: floating 3.7s infinite ease-in-out;
     position: relative;
-    left: 85%;
+    left: 80%;
 }
 
 @keyframes floating{
     50%{
-        transform: translateY(-60px);
+        transform: translateY(-30px);
     }
 }
 
@@ -198,19 +212,20 @@ section#item3{
 
 /* 顶部发光按钮 */
 .container{
-	width: 800px;
+	width: 60%;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
 .container .btn{
 	position: relative;
-	padding-left: 20px;
-	width: 100px;
+	padding-left: 17px;
+	width: 90px;
 	height: 27px;
-	margin: 20px;
+	margin: 13px;
 	z-index: 3000;
 }
+
 .container .btn a{
 	text-decoration: none;
 	position: absolute;
@@ -234,9 +249,11 @@ section#item3{
 	transition: 0.5s;
 	backdrop-filter: blur(20px);
 }
+
 .container .btn:hover a{
   	letter-spacing: 3px;
 }
+
 .container .btn a::before{
 	content:'';
 	position: absolute;
@@ -320,7 +337,9 @@ section#item3{
 				0 0 60px #11ff45;
 }
 
+
 /* 返回顶部的Top */
+
 .rocket-button {
     --background: #262730;
     --text: #fff;
@@ -352,6 +371,7 @@ section#item3{
     bottom: 77px;
     z-index: 201;
 }
+
 .rocket-button:before {
     content: "";
     top: 0;
@@ -366,11 +386,13 @@ section#item3{
     position: absolute;
     background: var(--background);
 }
+
 .rocket-button .default,
 .rocket-button .success,
 .rocket-button .animation {
     z-index: 1;
 }
+
 .rocket-button .default span,
 .rocket-button .success span {
     display: block;
@@ -379,10 +401,12 @@ section#item3{
     opacity: var(--o, 1);
     filter: blur(var(--b, 0px));
 }
+
 .rocket-button .default {
     position: relative;
     display: flex;
 }
+
 .rocket-button .default:before {
     content: "";
     width: 5px;
@@ -398,6 +422,7 @@ section#item3{
     opacity: var(--o, 1);
     background: var(--dot);
 }
+
 .rocket-button .success {
     opacity: var(--o, 0);
     position: absolute;
@@ -406,6 +431,7 @@ section#item3{
     left: 50%;
     transform: translateX(-50%);
 }
+
 .rocket-button .success svg {
     width: 13px;
     height: 11px;
@@ -419,14 +445,17 @@ section#item3{
     color: var(--check);
     margin: 4px 8px 0 0;
 }
+
 .rocket-button .success > div {
     display: flex;
 }
+
 .rocket-button .success > div span {
     --o: 0;
     --x: 8px;
     --b: 2px;
 }
+
 .rocket-button .animation {
     left: 0;
     right: 0;
@@ -436,11 +465,13 @@ section#item3{
     overflow: hidden;
     position: absolute;
 }
+
 .rocket-button .animation .smoke {
     left: 50%;
     top: 100%;
     position: absolute;
 }
+
 .rocket-button .animation .smoke i {
     opacity: 0;
     transform: scale(0.7);
@@ -452,36 +483,42 @@ section#item3{
     height: var(--s, 32px);
     background: var(--smoke);
 }
+
 .rocket-button .animation .smoke i:nth-child(2) {
     --s: 20px;
     --l: -24px;
     --b: -10px;
     --d: 50ms;
 }
+
 .rocket-button .animation .smoke i:nth-child(3) {
     --s: 22px;
     --l: 0;
     --b: -12px;
     --d: 20ms;
 }
+
 .rocket-button .animation .smoke i:nth-child(4) {
     --s: 12px;
     --l: 16px;
     --b: -6px;
     --d: 120ms;
 }
+
 .rocket-button .animation .smoke i:nth-child(5) {
     --s: 24px;
     --l: -20px;
     --b: -14px;
     --d: 80ms;
 }
+
 .rocket-button .animation .smoke i:nth-child(6) {
     --s: 12px;
     --l: -28px;
     --b: -8px;
     --d: 60ms;
 }
+
 .rocket-button .animation .rocket {
     position: absolute;
     left: 50%;
@@ -489,6 +526,7 @@ section#item3{
     z-index: 1;
     margin: 0 0 0 -12px;
 }
+
 .rocket-button .animation .rocket:before {
     content: "";
     margin-left: -3px;
@@ -502,52 +540,64 @@ section#item3{
     transform: scaleY(0.5);
     background: linear-gradient(var(--blue), var(--blue-transparent));
 }
+
 .rocket-button .animation .rocket svg {
     width: 24px;
     height: 36px;
     display: block;
 }
+
 .rocket-button:active {
     --s: .95;
 }
+
 .rocket-button.live:before {
     -webkit-animation: shake 1.5s ease 0.6s;
     animation: shake 1.5s ease 0.6s;
 }
+
 .rocket-button.live .default:before {
     --o: 0;
 }
+
 .rocket-button.live .default span {
     --o: 0;
     --x: 8px;
     --b: 2px;
     transition: transform 0.3s ease var(--d), opacity 0.3s ease var(--d), filter 0.3s ease var(--d);
 }
+
 .rocket-button.live .success {
     --o: 1;
 }
+
 .rocket-button.live .success span {
     --o: 1;
     --x: 0;
     --b: 0;
     transition: transform 0.3s ease calc(var(--d) + 2200ms), opacity 0.3s ease calc(var(--d) + 2200ms), filter 0.3s ease calc(var(--d) + 2200ms);
 }
+
 .rocket-button.live .success svg {
     --o: 0;
     transition: stroke-dashoffset 0.3s ease 2.25s;
 }
+
 .rocket-button.live .animation .rocket {
     -webkit-animation: rocket 2s ease forwards 0.4s;
     animation: rocket 2s ease forwards 0.4s;
 }
+
 .rocket-button.live .animation .rocket:before {
     -webkit-animation: rocket-light 2s ease forwards 0.4s;
     animation: rocket-light 2s ease forwards 0.4s;
 }
+
 .rocket-button.live .animation .smoke i {
     -webkit-animation: var(--n, smoke) 1.7s ease forwards calc(var(--d) + 600ms);
     animation: var(--n, smoke) 1.7s ease forwards calc(var(--d) + 600ms);
 }
+
 .rocket-button.live .animation .smoke i:nth-child(3), .rocket-button.live .animation .smoke i:nth-child(6) {
     --n: smoke-alt;
 }
@@ -557,12 +607,13 @@ section#item3{
 		box-shadow: 0 0 0 2px var(--dot-shadow);
     }
 }
-  
+
 @keyframes pulse {
     50% {
         box-shadow: 0 0 0 2px var(--dot-shadow);
     }
 }
+
 @-webkit-keyframes shake {
     8%, 24%, 40%, 56%, 72%, 88% {
         transform: translateX(-1px);
@@ -571,6 +622,7 @@ section#item3{
         transform: translateX(1px);
     }
 }
+
 @keyframes shake {
     8%, 24%, 40%, 56%, 72%, 88% {
         transform: translateX(-1px);
@@ -579,6 +631,7 @@ section#item3{
         transform: translateX(1px);
     }
 }
+
 @-webkit-keyframes smoke {
     20%, 80% {
         opacity: 1;
@@ -588,6 +641,7 @@ section#item3{
         transform: scale(0.92);
     }
 }
+
 @keyframes smoke {
     20%, 80% {
 		opacity: 1;
@@ -597,6 +651,7 @@ section#item3{
         transform: scale(0.92);
     }
 }
+
 @-webkit-keyframes smoke-alt {
     20%, 80% {
         opacity: 1;
@@ -606,6 +661,7 @@ section#item3{
         transform: scale(1.08);
     }
 }
+
 @keyframes smoke-alt {
     20%, 80% {
         opacity: 1;
@@ -615,6 +671,7 @@ section#item3{
         transform: scale(1.08);
     }
 }
+
 @-webkit-keyframes rocket {
     35% {
         transform: translateY(-56px);
@@ -628,6 +685,7 @@ section#item3{
         opacity: 0;
     }
 }
+
 @keyframes rocket {
     35% {
         transform: translateY(-56px);
@@ -641,6 +699,7 @@ section#item3{
         opacity: 0;
     }
 }
+
 @-webkit-keyframes rocket-light {
     35% {
         transform: scaleY(0.6);
@@ -652,6 +711,7 @@ section#item3{
         transform: scaleY(1);
     }
 }
+
 @keyframes rocket-light {
     35% {
         transform: scaleY(0.6);
@@ -666,13 +726,15 @@ section#item3{
 
 /* 返回顶部的Top-end */
 
+
 /* 滑动文件 */
+
 .toc {
     position: fixed;
 	left: 7em;
 	top: 13em;
 	padding: 1em;
-	width: 10em;
+	width: 13em;
 	line-height: 2;
     height: 65px;
 }
@@ -711,8 +773,8 @@ section#item3{
 .contents {
   	padding: 0 1.3em 1.3em 1.3em;
   	max-width: 970px;
-	  font-size: 1.2em;
-	  font-family: "Frank Ruhl Libre", sans-serif;
+	font-size: 1.3em;
+	font-family: "Frank Ruhl Libre", sans-serif;
     margin: 0 auto;
 }
 .contents img {
@@ -732,18 +794,23 @@ section#item3{
 	background-color: #fff;
 	padding: 4px;
 }
-.contents h2,
-.contents h3 {
-	/* padding-top: 1em; */
-}
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1305px) {
   	body {
     		font-size: 15px;
 	  }
-    .article-contecns{
-        max-width: 577px;
+    .contents{
+        max-width: 797px !important;
     }
+}
+
+@media screen and (max-width: 1205px) {
+	body {
+		  font-size: 14px;
+	}
+  .contents{
+	  max-width: 577px !important;
+  }
 }
 
 /* 底部联系我icon */
@@ -816,10 +883,6 @@ section#item3{
     transform: translate(20px, -20px);
 }
 
-.icons a:hover .layer span:nth-child(6){
-    opacity: 1;
-    transform: translate(20px, -20px);
-}
 
 .icons a:nth-child(1) .layer span,
 .icons a:nth-child(1) .text{
@@ -835,24 +898,18 @@ section#item3{
 
 .icons a:nth-child(3) .layer span,
 .icons a:nth-child(3) .text{
-    color: #E1306C;
-    border-color: #E1306C;
-}
-
-.icons a:nth-child(4) .layer span,
-.icons a:nth-child(4) .text{
     color: #2867B2;
     border-color: #2867B2;
 }
 
-.icons a:nth-child(5) .layer span,
-.icons a:nth-child(5) .text{
+.icons a:nth-child(4) .layer span,
+.icons a:nth-child(4) .text{
     color: #6d56c9;
     border-color: #6d56c9;
 }
 
-.icons a:nth-child(6) .layer span,
-.icons a:nth-child(6) .text{
+.icons a:nth-child(5) .layer span,
+.icons a:nth-child(5) .text{
     color: #1DA1F2;
     border-color: #1DA1F2;
 }
@@ -866,18 +923,14 @@ section#item3{
 }
 
 .icons a:nth-child(3) .layer span{
-    box-shadow: -1px 1px 3px #E1306C;
-}
-
-.icons a:nth-child(4) .layer span{
     box-shadow: -1px 1px 3px #4267B2;
 }
 
-.icons a:nth-child(5) .layer span{
+.icons a:nth-child(4) .layer span{
     box-shadow: -1px 1px 3px #6d56c9;
 }
 
-.icons a:nth-child(6) .layer span{
+.icons a:nth-child(5) .layer span{
     box-shadow: -1px 1px 3px #1DA1F2;
 }
 
@@ -900,7 +953,7 @@ section#item3{
 	top: 110px;
     text-align: center;
     position: relative;
-    right: -90%;
+    right: -83%;
     width: 1px;
 }
 
@@ -1063,6 +1116,7 @@ section#item3{
 }
 
 /* 头像 */
+
 #jeangrey{
 	position: relative;
 	left: 80%;
@@ -1081,8 +1135,9 @@ section#item3{
 
 #jeangrey .container-about {
 	background: #fff;
-	border: 2px solid rgb(252, 247, 1);
+	border: 3.7px solid rgb(252, 247, 1);
 }
+
 #jeangrey .body {
 	position: absolute;
 	width: 100px;
@@ -1095,6 +1150,7 @@ section#item3{
 	z-index: 1;
 	overflow: hidden;
 }
+
 #jeangrey .body:before {
 	content: "";
 	position: absolute;
@@ -1106,6 +1162,7 @@ section#item3{
 	height: 20px;
 	border-radius: 100%;
 }
+
 #jeangrey .face {
 	position: absolute;
 	width: 80px;
@@ -1117,6 +1174,7 @@ section#item3{
 	transform: translateX(-50%);
 	z-index: 3;
 }
+
 #jeangrey .hair {
 	position: absolute;
 	width: 110px;
@@ -1126,7 +1184,8 @@ section#item3{
 	transform: translateX(-50%);
 	background: #000;
 	border-radius: 50% 50% 0 0;
-	}
+}
+
 #jeangrey .hair-front {
 	position: absolute;
 	left: 60px;
@@ -1137,6 +1196,7 @@ section#item3{
 	background: #000;
 	z-index: 20;
 }
+
 #jeangrey .neck {
 	position: absolute;
 	z-index: 2;
@@ -1148,6 +1208,7 @@ section#item3{
 	top: 90px;
 	background: #F0BEAF;
 }
+
 #jeangrey .eyes {
 	position: absolute;
 	top: 34px;
@@ -1368,3 +1429,275 @@ section#item3{
         opacity: 1;
    }
 }
+
+/* About Lydia Lei */
+
+.card-wrapper {
+	font-family: "Montserrat", sans-serif;
+	margin: 0;
+	width: 100%;
+	height: 60vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 32px;
+	box-sizing: border-box;
+	position: relative;
+	bottom: 177px;
+}
+
+.card-wrapper  a {
+	color: #07aa79;
+	text-decoration: none;
+}
+  
+.swiper-wrapper h1 {
+	margin: 0;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 32px;
+	color: #26384E;
+	transform: translateY(20px);
+	transition: all 0.4s ease;
+	transition-delay: 0.2s;
+	overflow: hidden;
+	max-width: 100%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+@media screen and (max-width: 520px) {
+	  	.swiper-wrapper h1 {
+	  	font-size: 16px;
+		line-height: 24px;
+	}
+}
+  
+.swiper-wrapper p {
+	font-size: 16px;
+	line-height: 24px;
+	color: #2d578d;
+	transform: translateY(20px);
+	transition: all 0.4s ease;
+	transition-delay: 0.3s;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	box-sizing: border-box;
+}
+
+@media screen and (max-width: 520px) {
+	.swiper-wrapper p {
+		font-size: 14px;
+		line-height: 20px;
+	}
+}
+  
+.swiper-wrapper {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	z-index: 1;
+	position: relative;
+	box-sizing: border-box;
+}
+  
+.swiper-container {
+	background: linear-gradient(270deg, #f7f9ff 0%, #f2f6ff 100%);
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	width: 100%;
+	position: relative;
+	max-width: 420px;
+	height: 100%;
+	max-height: 420px;
+	border-radius: 10px;
+	box-sizing: border-box;
+}
+  
+.slider-image-wrapper {
+	height: 200px;
+	width: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+	text-align: center;
+	background-color: #a6e3f2;
+}
+
+.slider-item {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	overflow: hidden;
+	display: flex;
+	box-sizing: border-box;
+	flex-direction: column;
+	flex-shrink: 0;
+	opacity: 0;
+	background: linear-gradient(180deg, #f7f9ff 70%, #94abde 100%);
+	cursor: -webkit-grab;
+	cursor: grab;
+}
+
+.slider-item-content {
+	padding: 32px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	transition: 0.4s;
+}
+
+.slider-item-content > * {
+	opacity: 0;
+	transform: translateY(20px);
+	box-sizing: border-box;
+}
+  
+.swiper-slide-active .slider-item-content > * {
+	transform: translateY(0px);
+	opacity: 1;
+	box-sizing: border-box;
+}
+  
+.slider-image {
+	height: 100%;
+	-o-object-fit: cover;
+	object-fit: cover;
+	transition: 0.2s;
+	box-sizing: border-box;
+}
+
+.width100 {
+	width: 100% !important;
+}
+  
+.swiper-pagination {
+	position: absolute;
+	left: 50%;
+	bottom: 8px;
+	transform: translatex(-50%);
+	z-index: 1;
+	width: auto !important;
+	box-sizing: border-box;
+}
+  
+.swiper-pagination-bullet {
+	border-radius: 0;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	line-height: 30px;
+	font-size: 12px;
+	opacity: 1;
+	background: rgba(255, 185, 0, 0.3);
+	display: inline-block;
+	margin-right: 8px;
+	cursor: pointer;
+	transition: all 0.2s;
+	box-sizing: border-box;
+}
+  
+.swiper-pagination-bullet-active {
+	background: #FFB200;
+	width: 20px;
+	border-radius: 10px;
+	box-sizing: border-box;
+}
+  
+.slider-buttons {
+	position: absolute;
+	display: flex;
+	top: 100%;
+	justify-content: flex-end;
+	width: 100%;
+	padding-top: 8px;
+	box-sizing: border-box;
+}
+  
+.swiper-button-next,
+.swiper-button-prev {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	color: #fff;
+	position: relative;
+	box-sizing: border-box;
+	margin-left: 4px;
+}
+
+.swiper-button-next:before,
+.swiper-button-prev:before {
+	content: "";
+	position: absolute;
+	background-color: #fff;
+	height: 1px;
+	width: 0;
+	left: 0;
+	bottom: -1px;
+	box-sizing: border-box;
+	transition: 0.2s;
+}
+
+.swiper-button-next:hover:before,
+.swiper-button-prev:hover:before {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+
+/* 首页下箭头 */
+.contents a{
+	color: hsl(65, 80%, 60%);
+	text-decoration: none;
+}
+  
+a:hover,
+a:focus {
+	text-decoration: underline;
+}
+  
+.page-title {
+	text-align: center;
+	font-size: 21px;
+}
+  
+.page-title::after {
+	content: '↓';
+	display: block;
+	font-size: 2.3em;
+	opacity: 0;
+	transform: translateY(-24px);
+	-webkit-animation: fadein 1700ms 770ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+			animation: fadein 1700ms 770ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.header{
+	display: grid;
+	place-items: center;
+}
+
+@-webkit-keyframes fadein {
+	to {
+	  	opacity: 0.8;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadein {
+	to {
+	  	opacity: 0.8;
+	  	transform: translateY(0);
+	}
+}
+
+@media(max-width: 920px) {
+	.response-img{
+	  	width: 97%;
+	}
+}
+

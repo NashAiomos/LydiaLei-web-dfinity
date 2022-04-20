@@ -352,8 +352,6 @@ function run(){
         fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch/2 ) ) );
         fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch/2 ) ) );
         fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch/2 ) ) );
-        fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch/2 ) ) );
-        fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch/2 ) ) );
         limiterNow=0;
     }else{
         limiterNow++
