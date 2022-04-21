@@ -128,7 +128,7 @@ section{
 
 section#item1{
     background: #000a1d;
-    /* font-family: sana-serif; */
+	font-family: 'Shippori Mincho', serif;
 }
 
 section#item2{
@@ -183,7 +183,7 @@ section#item3{
 }
 
 .font-light:hover span:nth-child(2)::after{
-    content: "Lei";
+    content: "Leí";
 }
 
 .font-light:hover span:nth-child(2){
@@ -1713,7 +1713,7 @@ section#item3{
 }
 
 .typing.animate::before {
-	content: "Hello, Web3.0 Lydia Lei!";
+	content: "Hello, Web3.0 Lydia Leí!";
 	animation: type2 1s steps(4) 3s forwards, type3 3s steps(22, end) 6s forwards;
 }
 
@@ -1741,11 +1741,11 @@ section#item3{
 @keyframes type3 {
 	from {
 		width: 18ch;
-		content: "Hello, Web3.0 Friend! This is Lydia Lei space!"
+		content: "Hello, Web3.0 Friend! This is Lydia Leí space!"
 	}
 	to {
 		width: 37.5ch;
-		content: "Hello, Web3.0 Friend! This is Lydia Lei space!"
+		content: "Hello, Web3.0 Friend! This is Lydia Leí space!"
 	}
 }
 
