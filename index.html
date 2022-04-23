@@ -8,6 +8,7 @@
     <title>Lydia Leí</title>
     <link rel="icon" href="img/ICP-logo-mark.png">
     <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/flipclock.css">
     <link rel="stylesheet" href="css/main.css">
 
     <!-- 禁止 ctrl + c =================================================================== -->
@@ -78,6 +79,8 @@
 
             <img class="motoko" width="277px" src="img/icon-motoko.png">
             
+                <div class="clock"></div>
+
             <header class="header">
                 <span class="page-title">Scroll down to explore more</span>
             </header>
@@ -212,7 +215,7 @@
                 <div id="css-fonts">
                     <h3>Future</h3>
                     <p>
-                        Lydia believes that the IC is the future of Web3.0 and the Metaverse.
+                        Lydia believes that the IC is the future of Web 3.0 and the Metaverse.
                     </p>
                     <p>
                         If you have any questions, please <a href="#item3">ask her</a> questions about Blockhain technology and <a href="https://dfinity.org/showcase/">the Internet Computer ecosystem</a>.
@@ -222,6 +225,9 @@
                     <h3>Community</h3>
                     <p>
                         Welcome to the dfinity community.
+                    </p>
+                    <p>
+                        This is my decentralize identity: distrikt @realLydialei &nbsp;&nbsp;&nbsp; OpenChat LydiaICP.
                     </p>
                     <p>
                         Here is Dfinity's
@@ -251,7 +257,7 @@
         <div class="glass">
             <h1 class="T1">Show</h1>
         </div>
-        
+
         <div id="jeangrey">
             <div class="container-about">
                 <div class="fire">
@@ -277,7 +283,6 @@
                 <div class="body">
                     <div class="emblem">&nbsp;&nbsp;&nbsp;∞</div>
                 </div>
-        
                 <div class="telepathy one"></div>
                 <div class="telepathy two"></div>
                 <div class="telepathy three"></div>
@@ -483,6 +488,19 @@
         
     </script>
     <!-- 返回顶部的小火箭-end -->
+
+	<script type="text/javascript" src="js/flipclock.js"></script>
+	<script type="text/javascript">
+	
+        var date = new Date('2022-04-22 05:21:12');
+        var now = new Date();
+        var diff = (now.getTime() / 1000) - (date.getTime() / 1000);
+    
+        var clock = $('.clock').FlipClock(diff,{
+            clockFace: 'DailyCounter',
+        });  
+
+	</script>
 
 </body>
 </html>

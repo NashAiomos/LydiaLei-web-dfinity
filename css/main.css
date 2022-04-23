@@ -1702,8 +1702,8 @@ section#item3{
 	width: 21ch;
 	border-right: 0.1em solid rgb(241, 237, 237);
 	font-family: monospace;
-	font-size: 2em;
-	animation: type 2.5s steps(20), writer 1s infinite alternate, delete 0.5s steps(5) 2.5s, type2 1s steps(4) 3s forwards, type3 3s steps(22, end) 6s forwards;
+	font-size: 2.7em;
+	animation: type 2.5s steps(20), writer 1s infinite alternate, delete 1s steps(5) 2.5s, type2 1s steps(4) 3s forwards, type3 3s steps(20, end) 6s forwards;
 	overflow: hidden;
 	white-space: nowrap;
 	cursor: pointer;
@@ -1730,22 +1730,22 @@ section#item3{
 	from {
 		width: 16ch;
 
-		content: "Hello, Web3.0 Friend!"
+		content: "Hello, Web3.0 Friend!";
 	}
 	to {
 		width: 20ch;
-		content: "Hello, Web3.0 Friend!"
+		content: "Hello, Web3.0 Friend!";
 	}
 }
 
 @keyframes type3 {
 	from {
 		width: 18ch;
-		content: "Hello, Web3.0 Friend! This is Lydia Leí space!"
+		content: "Hello, Web3.0 Friend! This is Lydia Leí space!";
 	}
 	to {
 		width: 37.5ch;
-		content: "Hello, Web3.0 Friend! This is Lydia Leí space!"
+		content: "Hello, Web3.0 Friend! This is Lydia Leí space!";
 	}
 }
 
@@ -1762,4 +1762,42 @@ from {
 	to {
 		width: 12ch;
 	}
+}
+
+
+/* clock */
+.clock-wrapper-in-hero{
+	width: auto;
+}
+.clock-wrapper-word{
+	color: #FFF;
+	font-size: 21px;
+}
+.clock{
+	width: auto;
+}
+.flip-clock-dot{
+	background: #ccc;
+}
+.flip-clock-meridium a{
+	color: #ccc;
+}
+.flip-clock-wrapper{
+	width: 37%;
+	position: absolute; 
+	top: 10%;
+	left: 35%;
+	transform: translate(-50%,-50%); 
+}
+/* 所有时钟的文字 */
+.flip-clock-divider .flip-clock-label{
+    font-size: 17px;
+    color: #fff;
+}
+.clock::before{
+	content: "Has been running on IC: ";
+	font-size: 25px;
+	position: relative;
+	right: 285px;
+	top: 57px;
 }
