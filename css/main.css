@@ -7,20 +7,6 @@ html,body{
     min-height: 100%;
 }
 
-#runaway-btn {
-	position: absolute;
-	z-index: 207;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	height: 4rem;
-	width: 10rem;
-	font-size: 1.5rem;
-	border-radius: 5px;
-	border: none;
-	box-shadow: 1px 1px 5px rgb(140, 139, 139);
-}
-
 article{
 	background-image: linear-gradient(to bottom, #000a1d 30%, #24206C, #88D9FF, #FFF 80%);
 	background-size: 100% 500%;
@@ -46,7 +32,7 @@ article{
 
 .center{
     margin: 0 auto;
-    width: 22%;
+    width: 17%;
     margin-top: 177px;
     margin-bottom: 77px;
 }
@@ -64,7 +50,6 @@ header{
     background-size: cover;
     height: 100%;
     width: 100%;
-	
     transform-origin: 50% 100%;
     transform-style: preserve-3d;
 }
@@ -132,7 +117,6 @@ section#item1{
 }
 
 section#item2{
-    /* background-image: url(img/hero.jpg); */
     background-size: cover;
     background: #000a1d;
     font-family: sans-serif;
@@ -1713,7 +1697,7 @@ section#item3{
 }
 
 .typing.animate::before {
-	content: "Hello, Web3.0 Lydia Leí!";
+	content: "Hello, Web 3.0 Lydia Leí!";
 	animation: type2 1s steps(4) 3s forwards, type3 3s steps(22, end) 6s forwards;
 }
 
@@ -1730,22 +1714,22 @@ section#item3{
 	from {
 		width: 16ch;
 
-		content: "Hello, Web3.0 Friend!";
+		content: "Hello, Web 3.0 Friend!";
 	}
 	to {
 		width: 20ch;
-		content: "Hello, Web3.0 Friend!";
+		content: "Hello, Web 3.0 Friend!";
 	}
 }
 
 @keyframes type3 {
 	from {
 		width: 18ch;
-		content: "Hello, Web3.0 Friend! This is Lydia Leí space!";
+		content: "Hello, Web 3.0 Friend! This is Lydia Leí space!";
 	}
 	to {
 		width: 37.5ch;
-		content: "Hello, Web3.0 Friend! This is Lydia Leí space!";
+		content: "Hello, Web 3.0 Friend! This is Lydia Leí space!";
 	}
 }
 

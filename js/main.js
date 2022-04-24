@@ -228,68 +228,69 @@ Firework.prototype.update = function(index) {
 
 //开始写烟花爆炸颗粒对象
 
-function Particle(x,y) {
+function Particle(x, y) {
     // 大部分的变量和烟花对象差不多
     // 当前坐标
-    this.x=x;
-    this.y=y;
+    this.x = x;
+    this.y = y;
     // 角度
-    this.angle=random(0,Math.PI*2);
+    this.angle = random(0, Math.PI * 2);
     // 速度
-    this.speed=random(1,10)
+    this.speed = random(1, 10);
     // 摩擦系数
-    this.friction=0.95
+    this.friction = 0.95;
     // 重力加速度
-    this.gravity=1;
+    this.gravity = 1;
     // hsl模式的灰度值，随机一个
-    this.hue=random(hue-20,hue+20)
+    this.hue = random(hue - 20, hue + 20);
     // 亮度
-    this.brightness=random(50,80)
+    this.brightness = random(50, 80);
     // 透明度
-    this.alpha=1;
+    this.alpha = 1;
     // 亮度的衰变率
-    this.decay=random(0.015,0.03)
+    this.decay = random(0.015, 0.03);
 
-    this.coordinates=[];
+    this.coordinates = [];
     // 这里我把颗粒的路径分成了5段来绘制
-    this.coordinateCount=5;
+    this.coordinateCount = 5;
     while (this.coordinateCount--) {
-        this.coordinates.push([this.x,this.y])
+        this.coordinates.push([this.x, this.y]);
     }
 
 }
-Particle.prototype.draw=function() {
+Particle.prototype.draw = function() {
     ctx.beginPath();
-    ctx.moveTo(this.coordinates[this.coordinates.length-1][0],this.coordinates[this.coordinates.length-1][1])
-    ctx.lineTo(this.x,this.y);
-    ctx.strokeStyle='hsla('+hue+',100%,'+this.brightness+'%,'+this.alpha+')'; // 这里要对变量进行拼接,加一个透明变量进来
+    ctx.moveTo(this.coordinates[this.coordinates.length - 1][0],this.coordinates[this.coordinates.length - 1][1])
+    ctx.lineTo(this.x, this.y);
+    // 这里要对变量进行拼接,加一个透明变量进来
+    ctx.strokeStyle = 'hsla(' + hue + ',100%,' + this.brightness + '%,' + this.alpha + ')';
     ctx.stroke();
 }
-Particle.prototype.update=function (index) {
+Particle.prototype.update = function (index) {
     // 首先要移除坐标数组中的最后一个坐标，然后把上一个位置插入到数组的最前面
     this.coordinates.pop();
-    this.coordinates.unshift([this.x,this.y]);
+    this.coordinates.unshift([this.x, this.y]);
 
     // 增加摩檫力，让粒子跌落的速度变慢
     this.speed*=this.friction;
 
-    this.x+=Math.cos(this.angle)*this.speed;
-    this.y+=Math.sin(this.angle)*this.speed+this.gravity;
+    this.x += Math.cos(this.angle) * this.speed;
+    this.y += Math.sin(this.angle) * this.speed + this.gravity;
 
     // 让透明度不断变小
-    this.alpha-=this.decay;
+    this.alpha -= this.decay;
 
     // 如果透明度低于decay值了，说明肉眼已经看不到了，这时我们就将起销毁
-    if (this.alpha<=this.decay) {
-        particles.splice(index,1);
+    if (this.alpha <= this.decay) {
+        particles.splice(index, 1);
     }
 }
 
 // 写一个创建烟花爆炸效果的函数
-function createParticle(x,y) {
-    let partcicleCount=100
+function createParticle(x, y) {
+    let partcicleCount = 100
     while (partcicleCount--) {
-        particles.push(new Particle(x,y));
+        particles.push(new Particle(x, y));
     }
 }
 
@@ -305,37 +306,37 @@ function createParticle(x,y) {
 // createFirework();
 
 function run() {
-    hue++
+    hue++;
     ctx.fillStyle = 'rgba(0, 10, 29, 0.5)'; // 设置画布背景颜色，透明度
 	ctx.fillRect( 0, 0, cw, ch );
-    var i=fireworks.length;
+    var i = fireworks.length;
     while (i--) {
         fireworks[i].draw();
         fireworks[i].update(i);
     }
-    var k=particles.length;
+    var k = particles.length;
     while (k--) {
         particles[k].draw();
         particles[k].update(k);
     }
     // 让烟花自动产生，有几行就同时射几次
-    if (limiterNow>=limiterTotal) {
+    if (limiterNow >= limiterTotal) {
         // 同时射7下
-        fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch/2 ) ) );
-        fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch/2 ) ) );
-        fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch/2 ) ) );
-        fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch/2 ) ) );
-        fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch/2 ) ) );
-        limiterNow=0;
+        fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) ) );
+        fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) ) );
+        fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) ) );
+        fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) ) );
+        fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) ) );
+        limiterNow = 0;
     } else {
         limiterNow++;
     }
 }
  //给画布添加鼠标事件，用鼠标点击来产生烟花
- canvas.addEventListener('mousedown',function(e) {
+ canvas.addEventListener('mousedown', function(e) {
     //  获取鼠标的坐标，有一定的偏移，所以需要矫正一下
-     mx=e.pageX-canvas.offsetLeft;
-     my=e.pageY-canvas.offsetTop;
-     fireworks.push(new Firework(cw / 2, ch, mx,my))
+     mx = e.pageX - canvas.offsetLeft;
+     my = e.pageY - canvas.offsetTop;
+     fireworks.push(new Firework(cw / 2, ch, mx, my));
  })
-setInterval(run,33); // 每隔33毫秒刷新一下屏幕
+setInterval(run, 33); // 每隔33毫秒刷新一下屏幕
