@@ -1,0 +1,1 @@
+$(document).ready((function(){$nav=$(".nav"),$toggleCollapse=$(".toggle-collapse"),$toggleCollapse.click((function(){$nav.toggleClass("collapse")})),$(".owl-carousel").owlCarousel({loop:!0,autoplay:!0,autoplayTimeout:3e3,dots:!1,nav:!0,responsive:{0:{items:1},320:{items:1},560:{items:2},960:{items:3}}}),AOS.init({})}));
