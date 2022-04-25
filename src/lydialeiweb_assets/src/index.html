@@ -6,10 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Nash Zheng / NeutronStarPRO">
     <title>Lydia Leí</title>
+    <!-- w -->
     <link rel="icon" href="img/ICP-logo-mark.png">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/flipclock.css">
+    <!-- w -->
+    
     <link rel="stylesheet" href="css/main.css">
+
+    <!-- 禁止 F12 查看html代码 =============================================================== -->
+    <script>
+        ((function() {
+            var callbacks = [], timeLimit = 50, open = false;
+            setInterval(loop, 1);
+            return {
+                addListener: function(fn) {
+                    callbacks.push(fn);
+                },
+                cancleListenr: function(fn) {
+                    callbacks = callbacks.filter(function(v) {
+                        return v !== fn;
+                    });
+                }
+            }
+            function loop() {
+                var startTime = new Date();
+                debugger;
+                if (new Date() - startTime > timeLimit) {
+                    if (!open) {
+                        callbacks.forEach(function(fn) {
+                            fn.call(null);
+                        });
+                    }
+                    open = true;
+                    window.stop();
+                    alert("ha ha ha~\nWhat do you want?\n");
+                    document.body.innerHTML = "";
+                }else {
+                    open = false;
+                }
+            }
+        })())
+        .addListener(function() {
+            window.location.reload();
+        });
+    </script>
 
     <!-- 禁止 ctrl + c =================================================================== -->
     <script>
@@ -75,10 +116,10 @@
     <header id="home">
         <div class="hero">
             <div class="typing animate"></div>
-
-            <img class="motoko" width="277px" src="img/icon-motoko.png">
-            
-                <div class="clock"></div>
+            <a href="index1.html">
+                <img class="motoko" width="277px" src="img/icon-motoko.png">
+            </a>
+            <div class="clock"></div>
 
             <header class="header">
                 <span class="page-title">Scroll down to explore more</span>
@@ -146,6 +187,7 @@
                     Lydia Leí is an active as an Web 3.0 Community Leader,
                     Internet Computer ecosystem Influencer, and Investor.
                 </p>
+                <img width="37%" style="margin-left: 27%;" src="img/Lydia.jpg">
                 <p>
                     She is a blockchain advocate and leader from 2017.
                     Now she have a very large following on <a href="https://twitter.com/Lydialei3?t=H68YsnfT75qaNaqTJnZNuA&s=09">Twitter</a>.
@@ -226,7 +268,7 @@
                         Welcome to the dfinity community.
                     </p>
                     <p>
-                        This is my decentralize identity: distrikt @realLydialei &nbsp;&nbsp;&nbsp; OpenChat LydiaICP.
+                        This is my decentralize identity: <a href="https://az5sd-cqaaa-aaaae-aaarq-cai.ic0.app/u/realLydialei">distrikt @realLydialei</a> &nbsp;&nbsp;&nbsp; <a href="https://6hsbt-vqaaa-aaaaf-aaafq-cai.ic0.app/#/tx6">OpenChat LydiaICP</a>.
                     </p>
                     <p>
                         Here is Dfinity's
@@ -299,7 +341,7 @@
                     </div>
                     <div class="slider-item-content">
                         <h1>Lydia Leí 's NFT</h1>
-                        <p>This is the NFT a motoko student made for me, so cool! Love it! You can cheak it on <a href="https://skeh5-daaaa-aaaai-aar4q-cai.raw.ic0.app/#/detail/alone/5/ihkox-4yaaa-aaaah-qcoza-cai">CCCProtocol</a>.</p>
+                        <p>This is the NFT a motoko student made for me, so cool! Love it! You can check it on <a href="https://skeh5-daaaa-aaaai-aar4q-cai.raw.ic0.app/#/detail/alone/5/ihkox-4yaaa-aaaah-qcoza-cai">CCCProtocol</a>.</p>
                     </div>
                 </div>
                 <div class="slider-item swiper-slide">
@@ -393,15 +435,15 @@
                         </div>
                         <span class="text">Discord</span>
                     </a>
-                    <a href="https://t.me/dfinity/">
+                    <a href="https://6hsbt-vqaaa-aaaaf-aaafq-cai.ic0.app/#/tx6">
                         <div class="layer">
                             <span></span>
                             <span></span>
                             <span></span>
                             <span></span>
-                            <span class="fab fa-brands fa-telegram"></span>
+                            <span class="fab fa-c"></span>
                         </div>
-                        <span class="text">Telegram</span>
+                        <span class="text">OpenChat</span>
                     </a>
                 </div>
             </div>
@@ -477,13 +519,13 @@
         });
         
         function pageScroll() {
-            //把内容滚动指定的像素数（第一个参数是向右滚动的像素数，第二个参数是向下滚动的像素数）
+            // 把内容滚动指定的像素数（第一个参数是向右滚动的像素数，第二个参数是向下滚动的像素数）
             window.scrollBy(0, -37);
-            //延时递归调用，模拟滚动向上效果
+            // 延时递归调用，模拟滚动向上效果
             scrolldelay = setTimeout('pageScroll()', 37);
-            //获取scrollTop值，声明了DTD的标准网页取document.documentElement.scrollTop，否则取document.body.scrollTop；因为二者只有一个会生效，另一个就恒为0，所以取和值可以得到网页的真正的scrollTop值
+            // 获取scrollTop值，声明了DTD的标准网页取document.documentElement.scrollTop，否则取document.body.scrollTop；因为二者只有一个会生效，另一个就恒为0，所以取和值可以得到网页的真正的scrollTop值
             var sTop = document.documentElement.scrollTop + document.body.scrollTop;
-            //判断当页面到达顶部，取消延时代码（否则页面滚动到顶部会无法再向下正常浏览页面）
+            // 判断当页面到达顶部，取消延时代码（否则页面滚动到顶部会无法再向下正常浏览页面）
             if (sTop == 0) clearTimeout(scrolldelay);
         }
         
