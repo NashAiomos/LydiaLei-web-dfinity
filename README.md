@@ -1,4 +1,4 @@
-# Lydia lei Website
+# Lydia Lei Website
 
 deploy:
 Unzip this file, then you can deploy and run：node_modules/p.zip
