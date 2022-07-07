@@ -1,6 +1,9 @@
-# lydialeiweb
+# Lydia lei Website
 
+deploy:
 Unzip this file, then you can deploy and run：node_modules/p.zip
+
+
 
 Welcome to your new lydialeiweb project and to the internet computer development community. 
 
